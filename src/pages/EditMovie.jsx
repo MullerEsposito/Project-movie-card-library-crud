@@ -57,4 +57,6 @@ EditMovie.propTypes = {
   }).isRequired,
 };
 
+abortController = new AbortController();
+
 export default EditMovie;

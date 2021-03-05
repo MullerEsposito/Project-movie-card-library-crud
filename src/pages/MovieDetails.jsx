@@ -13,26 +13,36 @@ class MovieDetails extends Component {
       movie: {},
       shouldRedirect: false,
     };
+    this._Mounted = false;
     this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
+    this._Mounted = true;
     this.fetchMovie();
+  }
+
+  componentWillUnmount() {
+    this._Mounted = false;
   }
 
   async handleDelete() {
     const { movie: { id } } = this.state;
-    await movieAPI.deleteMovie(id);
-    this.setState({ shouldRedirect: true });
+    if (this._Mounted) {
+      await movieAPI.deleteMovie(id);
+      this.setState({ shouldRedirect: true });
+    }
   }
 
   fetchMovie() {
     const { match: { params: { id } } } = this.props;
 
-    this.setState({ isLoading: true }, async () => {
-      const movie = await movieAPI.getMovie(id);
-      this.setState({ movie, isLoading: false });
-    });
+    if (this._Mounted) {
+      this.setState({ isLoading: true }, async () => {
+        const movie = await movieAPI.getMovie(id);
+        this.setState({ movie, isLoading: false });
+      });
+    }
   }
 
   renderMovieCard() {
