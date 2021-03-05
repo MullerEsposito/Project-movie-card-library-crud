@@ -1,0 +1,42 @@
+.container-movie-card {
+  display: flex;
+  flex-direction: column;
+  width: 35vw;
+  text-align: justify;
+  margin: 20px 0;
+  border: 1px #0000002e solid;
+  box-shadow: 1px 1px rgba(0,0,0,0.3);
+  border-radius: 3px;
+  justify-content: space-between;
+}
+
+.container-movie-card p {
+  padding: 0 10px;
+  font-size: 0.8em;
+}
+
+.container-img {
+  position: relative;
+}
+
+.container-img h1 {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  font-size: 0.9em;
+}
+
+.container-img img {
+  width: 100%;
+}
+
+.container-buttons {
+  display: flex;
+}
+
+.container-buttons button {
+  height: 20px;
+  background-color: white;
+  color: orangered;
+  border: none;
+}
