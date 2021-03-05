@@ -22,13 +22,10 @@ class MovieCard extends React.Component {
           <img src={ movie.imagePath } alt="" />
           <h1>{ movie.title }</h1>
         </div>
-        <p>{`Subtitle: ${movie.subtitle}` }</p>
-        <p>{`Storyline: ${movie.storyline}`}</p>
-        <p>{`Genre: ${movie.genre}`}</p>
-        <p>{`Rating: ${movie.rating}`}</p>
+        <p>{`${movie.storyline}`}</p>
         <div className="container-buttons">
-          <Link to={ `movies/${movie.id}` }>
-            <button type="button">VER DETALHES</button>
+          <Link className="button" to={ `movies/${movie.id}` }>
+            VER DETALHES
           </Link>
         </div>
       </div>

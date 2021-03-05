@@ -1,4 +1,4 @@
-.container-movie-card {
+.container-movie-details {
   display: flex;
   flex-direction: column;
   width: 35vw;
@@ -10,7 +10,7 @@
   justify-content: space-between;
 }
 
-.container-movie-card p {
+.container-movie-details p {
   padding: 0 10px;
   font-size: 0.8em;
 }
@@ -36,10 +36,11 @@
   border-top: 1px #adadac41 solid;
 }
 
-.container-buttons .button {
+.container-buttons a {
   height: 20px;
   color: #ffa61e;
   padding: 5px 10px 0;
   text-decoration: none;
+
   font-size: 0.8em;
 }
